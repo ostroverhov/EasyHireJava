@@ -1,0 +1,14 @@
+{
+  "signUpUser": {
+    "email": "easyhire@gmail.com",
+    "firstName": "Easy",
+    "lastName": "Hire",
+    "password": "Test1234@"
+  },
+  "loginUser": {
+    "email": "easyhire6@gmail.com",
+    "firstName": "Easy",
+    "lastName": "Hire",
+    "password": "Test1234@"
+  }
+}
