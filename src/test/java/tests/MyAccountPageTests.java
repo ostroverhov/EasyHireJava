@@ -2,6 +2,7 @@ package tests;
 
 import enums.HeaderButtonItem;
 import enums.MyAccountSideMenuItem;
+import framework.tests.BaseTest;
 import framework.utils.ConfigReader;
 import models.TestData;
 import org.junit.jupiter.api.DisplayName;

@@ -35,22 +35,15 @@ public class BrowserFactory {
                 driver = new FirefoxDriver();
             }
         }
+        assert driver != null;
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt(ConfigReader.getParameter("Wait")), TimeUnit.SECONDS);
         return driver;
     }
 
     public static void closeBrowser(WebDriver driver) {
         logger.info("Close browser");
         driver.quit();
-    }
-
-    public static void setImplicitlyWait(WebDriver driver) {
-        logger.info("Set implicitly wait [%s]", ConfigReader.getParameter("ImplicitlyWait"));
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt(ConfigReader.getParameter("ImplicitlyWait")), TimeUnit.SECONDS);
-    }
-
-    public static void setMaxSizeWindow(WebDriver driver) {
-        logger.info("Set max size window");
-        driver.manage().window().maximize();
     }
 
     public static void setUrl(WebDriver driver) {

@@ -1,6 +1,5 @@
 package framework.elements;
 
-import framework.steps.BaseSteps;
 import framework.utils.ConfigReader;
 import framework.utils.Logger;
 import org.openqa.selenium.By;
@@ -26,12 +25,10 @@ public class BaseElement {
     }
 
     protected WebElement getElement() {
-        logger.info("Get element [%s]", name);
         return driver.findElement(locator);
     }
 
     protected List<WebElement> getElements() {
-        logger.info("Get elements [%s]", name);
         return driver.findElements(locator);
     }
 
