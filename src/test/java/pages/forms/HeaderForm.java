@@ -2,9 +2,9 @@ package pages.forms;
 
 import enums.HeaderButtonItem;
 import framework.elements.Button;
+import framework.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
 
 public class HeaderForm extends BasePage {
 

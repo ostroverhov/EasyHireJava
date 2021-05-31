@@ -3,6 +3,7 @@ package pages;
 import framework.elements.Button;
 import framework.elements.ComboBox;
 import framework.elements.Label;
+import framework.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

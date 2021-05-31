@@ -1,4 +1,4 @@
-package tests;
+package framework.tests;
 
 import framework.drivers.BrowserFactory;
 import framework.utils.Logger;
@@ -14,8 +14,6 @@ public class BaseTest {
     @BeforeEach
     public void setUpBrowser(TestInfo testInfo){
         logger.info("Start scenario " + testInfo.getDisplayName());
-        BrowserFactory.setImplicitlyWait(browserFactory.getDriver());
-        BrowserFactory.setMaxSizeWindow(browserFactory.getDriver());
         BrowserFactory.setUrl(browserFactory.getDriver());
     }
 

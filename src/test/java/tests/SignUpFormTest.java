@@ -1,9 +1,10 @@
 package tests;
 
 import enums.AccountTypeItem;
+import framework.tests.BaseTest;
 import framework.utils.ConfigReader;
-import models.TestUser;
 import models.TestData;
+import models.TestUser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

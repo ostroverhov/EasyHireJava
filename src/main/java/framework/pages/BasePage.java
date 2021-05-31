@@ -1,6 +1,7 @@
-package pages;
+package framework.pages;
 
 import framework.utils.Logger;
+import framework.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -18,6 +19,6 @@ public class BasePage {
 
     public boolean isPresentPage(){
         Logger.getInstance().info("Is [%s] opened", namePage);
-        return driver.findElement(locator).isDisplayed();
+        return WaitUtils.waitForVisibilityElement(driver, locator).isDisplayed();
     }
 }

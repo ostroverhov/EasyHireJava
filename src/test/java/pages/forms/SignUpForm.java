@@ -5,9 +5,9 @@ import framework.elements.Button;
 import framework.elements.CheckBox;
 import framework.elements.Label;
 import framework.elements.TextBox;
+import framework.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
 
 public class SignUpForm extends BasePage {
 

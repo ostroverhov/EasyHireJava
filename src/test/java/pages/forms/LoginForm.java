@@ -3,9 +3,9 @@ package pages.forms;
 import framework.elements.Button;
 import framework.elements.Label;
 import framework.elements.TextBox;
+import framework.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
 
 public class LoginForm extends BasePage {
 
