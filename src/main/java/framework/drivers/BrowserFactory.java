@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class BrowserFactory {
 
     private static final Logger logger = Logger.getInstance();
@@ -37,7 +35,6 @@ public class BrowserFactory {
         }
         assert driver != null;
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt(ConfigReader.getParameter("Wait")), TimeUnit.SECONDS);
         return driver;
     }
 

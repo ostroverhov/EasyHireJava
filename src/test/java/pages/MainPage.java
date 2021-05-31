@@ -1,6 +1,7 @@
 package pages;
 
 import framework.elements.Button;
+import framework.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

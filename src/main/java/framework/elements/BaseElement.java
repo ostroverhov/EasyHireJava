@@ -1,13 +1,11 @@
 package framework.elements;
 
-import framework.utils.ConfigReader;
 import framework.utils.Logger;
+import framework.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -70,8 +68,7 @@ public class BaseElement {
 
     protected boolean waitForText(String text) {
         logger.info("Wait text [%s] from element [%s]", text, name);
-        return new WebDriverWait(driver, Integer.parseInt(ConfigReader.getParameter("ImplicitlyWait")))
-                .until(ExpectedConditions.textToBe(locator, text));
+        return WaitUtils.waitForTextToBe(text, driver, locator);
     }
 
     public void clickElementFromList(int elementNumber)
