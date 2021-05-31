@@ -22,8 +22,9 @@ public class BrowserFactory {
 
     private WebDriver initBrowser() {
         WebDriver driver = null;
-        Logger.getInstance().info("Browser [%s] init", ConfigReader.getParameter("Browser"));
-        switch (ConfigReader.getParameter("Browser")) {
+        var browser = System.getenv("browser") == null ? ConfigReader.getParameter("Browser") : System.getenv("browser");
+        Logger.getInstance().info("Browser [%s] init", browser);
+        switch (browser) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
