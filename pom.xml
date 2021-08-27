@@ -29,6 +29,10 @@
                             <name>junit.jupiter.extensions.autodetection.enabled</name>
                             <value>true</value>
                         </property>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}\allure-results</value>
+                        </property>
                     </systemProperties>
                     <properties>
                         <configurationParameters>
