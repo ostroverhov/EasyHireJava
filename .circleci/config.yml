@@ -5,6 +5,17 @@ jobs:
       - image: cimg/openjdk:16.0.1-browsers
     steps:
       - checkout
+
+      - restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "pom.xml" }}
+        - v1-dependencies-
+      - run: mvn dependency:go-offline
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+
       - run:
           name: Running tests
           command: mvn clean test
@@ -19,15 +30,5 @@ jobs:
 workflows:
   version: 2
   commit:
-    jobs:
-      - ui-tests
-  periodical:
-    triggers:
-      - schedule:
-          cron: "1 4,8,12 * * *"
-          filters:
-            branches:
-              only:
-                - master
     jobs:
       - ui-tests
