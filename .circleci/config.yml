@@ -5,6 +5,7 @@ jobs:
       - image: cimg/openjdk:16.0.1-browsers
     steps:
       - checkout
+      - working_directory: ~/EasyHireJava
       - run:
           name: Docker compose up
           command: docker-compose -f docker-compose.yml up
