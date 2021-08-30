@@ -36,7 +36,7 @@
                     </systemProperties>
                     <properties>
                         <configurationParameters>
-                            junit.jupiter.execution.parallel.enabled = true
+                            junit.jupiter.execution.parallel.enabled = false
                             junit.jupiter.execution.parallel.mode.default = same_thread
                             junit.jupiter.execution.parallel.mode.classes.default = concurrent
                         </configurationParameters>
