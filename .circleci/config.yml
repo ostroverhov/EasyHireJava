@@ -3,8 +3,19 @@ jobs:
   ui-tests:
     docker:
       - image: cimg/openjdk:16.0.1-browsers
+
+    machine:
+      enabled: true
+
+
+    working_directory: ~/project
+
+
     steps:
       - checkout
+      - run:
+          name: Build docker
+          command: docker-compose build
       - run:
           name: Docker compose up
           command: docker-compose up
