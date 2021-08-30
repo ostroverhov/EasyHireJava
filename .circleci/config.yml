@@ -1,11 +1,11 @@
 version: 2
 jobs:
   ui-tests:
-    docker:
-      - image: cimg/openjdk:16.0.1-browsers
+#    docker:
+#      - image: cimg/openjdk:16.0.1-browsers
 
     machine:
-      enabled: true
+      image: cimg/openjdk:16.0.1-browsers
 
 
     working_directory: ~/project
