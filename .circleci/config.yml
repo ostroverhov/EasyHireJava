@@ -4,7 +4,7 @@ orbs:
 jobs:
   ui-tests:
     docker:
-      - image: cimg/openjdk:16.0.1-browsers
+      - image: cimg/openjdk:8.0.282-browsers
     steps:
       - browser-tools/install-browser-tools
       - checkout
