@@ -6,6 +6,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class BrowserFactory {
 
@@ -27,11 +32,23 @@ public class BrowserFactory {
         switch (browser) {
             case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                try {
+                    driver = Boolean.parseBoolean(ConfigReader.getParameter("IsRemote"))
+                            ? new RemoteWebDriver(new URL(ConfigReader.getParameter("RemoteUrl")), DesiredCapabilities.chrome())
+                            : new ChromeDriver();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             }
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
+                try {
+                    driver = Boolean.parseBoolean(ConfigReader.getParameter("IsRemote"))
+                            ? new RemoteWebDriver(new URL(ConfigReader.getParameter("RemoteUrl")), DesiredCapabilities.firefox())
+                            : new FirefoxDriver();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
             }
         }
         assert driver != null;
